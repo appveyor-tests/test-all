@@ -18,6 +18,16 @@ build_script:
 - sh: bash ./build.sh
 
 for:
+#project-specific settings
+-
+  matrix:
+    only:
+      - PROJECT_NAME: WDK-10.0.14393.0
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+  install:
+  - ps: .\install.ps1
+  
+#global filters
 -
   matrix:
     only:
@@ -39,11 +49,4 @@ for:
   skip_commits:
     message: /ubuntu-only|vs2017-only/
     
-#project-specific settings
--
-  matrix:
-    only:
-      - PROJECT_NAME: WDK-10.0.14393.0
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-  install:
-  - ps: .\install.ps1
+
