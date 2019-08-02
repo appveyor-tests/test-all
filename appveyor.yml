@@ -27,6 +27,9 @@ for:
   install:
   - ps: .\install.ps1
   
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+  
 #global filters
 -
   matrix:
