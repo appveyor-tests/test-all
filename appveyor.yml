@@ -44,5 +44,6 @@ for:
   matrix:
     only:
       - PROJECT_NAME: WDK-10.0.14393.0
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   install:
   - ps: .\install.ps1
