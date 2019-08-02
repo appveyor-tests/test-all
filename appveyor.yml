@@ -18,27 +18,6 @@ build_script:
 - sh: bash ./build.sh
 
 for:
--
-  matrix:
-    except:
-      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-  skip_commits:
-    message: /ubuntu-only/
-
--
-  matrix:
-    except:
-      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-  skip_commits:
-    message: /vs2017-only/
-
--
-  matrix:
-    except:
-      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-  skip_commits:
-    message: /vs2015-only/
-
 #project-specific settings
 -
   matrix:
