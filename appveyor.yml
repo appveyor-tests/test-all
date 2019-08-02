@@ -1,0 +1,40 @@
+environment:  
+  matrix:
+  - PROJECT_NAME: WDK-10.0.14393.0
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  #- PROJECT_NAME: test-project-2
+  #  APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  #- PROJECT_NAME: test-project-3
+  #  APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+    
+clone_script:
+- cmd: git clone https://github.com/appveyor-tests/%PROJECT_NAME% %APPVEYOR_BUILD_FOLDER%
+- sh: git clone https://github.com/appveyor-tests/$PROJECT_NAME $APPVEYOR_BUILD_FOLDER
+
+build_script:
+- cmd: powershell .\build.ps1
+- sh: bash ./build.sh
+
+for:
+-
+  matrix:
+    except:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+  skip_commits:
+    message: /ubuntu-only/
+
+-
+  matrix:
+    except:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+  skip_commits:
+    message: /vs2017-only/
+
+-
+  matrix:
+    except:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+  skip_commits:
+    message: /vs2015-only/
