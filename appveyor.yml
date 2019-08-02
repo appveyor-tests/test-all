@@ -38,3 +38,11 @@ for:
       - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   skip_commits:
     message: /vs2015-only/
+
+#project-specific settings
+-
+  matrix:
+    only:
+      - PROJECT_NAME: WDK-10.0.14393.0
+  install:
+  - ps: .\install.ps1
