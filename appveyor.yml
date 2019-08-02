@@ -3,8 +3,8 @@ environment:
   - PROJECT_NAME: WDK-10.0.14393.0
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
-  #- PROJECT_NAME: test-project-2
-  #  APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+  - PROJECT_NAME: test-project-2
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
   #- PROJECT_NAME: test-project-3
   #  APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
