@@ -6,6 +6,9 @@ environment:
   - PROJECT_NAME: docker-tests
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
+  - PROJECT_NAME: dotnet-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
   #- PROJECT_NAME: test-project-3
   #  APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
     
