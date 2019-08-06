@@ -1,18 +1,7 @@
 environment:  
   matrix:
-  - PROJECT_NAME: WDK-10.0.14393.0
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
-  - PROJECT_NAME: docker-tests
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: dotnet-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: service-fabric-docker
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: appveyor-py-launcher
+  - PROJECT_NAME: artifacts
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
   #- PROJECT_NAME: test-project-3
