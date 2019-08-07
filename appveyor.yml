@@ -17,9 +17,11 @@ build_script:
 - sh: bash ./build.sh
 
 for:
+##########################
 #project-specific settings
+##########################
 
-#project: WDK-10.0.14393.0
+#test project: WDK-10.0.14393.0
 -
   matrix:
     only:
@@ -31,7 +33,7 @@ for:
   skip_commits:
     message: /ubuntu-only|vs2017-only/
 
-#project: artifacts
+#test project: artifacts
 -
   matrix:
     only:
@@ -45,9 +47,11 @@ for:
   - ps: Get-EventLog AppVeyor -newest 10 | Format-List
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
-  
-#global filters
+    message: /ubuntu-only|vs2015-only|vs2017-only/
+
+########################
+#    global filters
+########################
 -
   matrix:
     only:
