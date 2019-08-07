@@ -32,7 +32,7 @@ for:
     only:
       - PROJECT_NAME: artifacts
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-  artifacts:
+  after_test:
   - ps: .\test-artifacts.ps1
   
   skip_commits:
