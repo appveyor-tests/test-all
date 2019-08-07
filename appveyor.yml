@@ -18,6 +18,8 @@ build_script:
 
 for:
 #project-specific settings
+
+#project: WDK-10.0.14393.0
 -
   matrix:
     only:
@@ -28,12 +30,13 @@ for:
   
   skip_commits:
     message: /ubuntu-only|vs2017-only/
-    
+
+#project: artifacts
 -
   matrix:
     only:
       - PROJECT_NAME: artifacts
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+        #APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
   artifacts:
   - path: go17.zip
   - path: go17-2-link.zip
@@ -42,7 +45,7 @@ for:
   - ps: Get-EventLog AppVeyor -newest 10 | Format-List
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2015-only/
   
 #global filters
 -
