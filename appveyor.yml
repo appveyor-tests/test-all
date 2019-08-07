@@ -1,6 +1,8 @@
 environment:  
   matrix:
     
+   - PROJECT_NAME: artifacts
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
   - PROJECT_NAME: artifacts
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
