@@ -2,7 +2,7 @@ environment:
   matrix:
     
     
-  - PROJECT_NAME: docker-tests
+  - PROJECT_NAME: artifacts
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
     
@@ -23,6 +23,17 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   install:
   - ps: .\install.ps1
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
+-
+  matrix:
+    only:
+      - PROJECT_NAME: artifacts
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+  install:
+  - ps: .\test-artifacts.ps1
   
   skip_commits:
     message: /ubuntu-only|vs2017-only/
