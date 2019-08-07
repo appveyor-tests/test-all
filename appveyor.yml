@@ -35,10 +35,12 @@ for:
 
 #test project: artifacts
 
+#Visual Studio 2017
 -
   matrix:
     only:
       - PROJECT_NAME: artifacts
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
   artifacts:
   - path: go17.zip
   - path: go17-2-link.zip
@@ -47,7 +49,23 @@ for:
   - ps: Get-EventLog AppVeyor -newest 10 | Format-List
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only/
+    
+#Visual Studio 2015
+-
+  matrix:
+    only:
+      - PROJECT_NAME: artifacts
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+  artifacts:
+  - path: go17.zip
+  - path: go17-2-link.zip
+  - path: go16
+  on_failure:
+  - ps: Get-EventLog AppVeyor -newest 10 | Format-List
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
     
 
 
