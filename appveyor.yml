@@ -36,7 +36,7 @@ for:
   - dotnet restore
   
   build:
-    verbosity: minimal
+    verbosity: normal
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/
@@ -48,7 +48,7 @@ for:
       - PROJECT_NAME: SetupProject2017
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
-    verbosity: minimal
+    verbosity: normal
   test: off
   
   skip_commits:
