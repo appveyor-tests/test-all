@@ -8,7 +8,7 @@ environment:
   - PROJECT_NAME: semver2-nuget-restore
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_NAME: wix-in-vs2017
+  - PROJECT_NAME: SetupProject2017 # Appveyor test project name: wix-in-vs2017
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
    
     
@@ -41,11 +41,11 @@ for:
   skip_commits:
     message: /ubuntu-only|vs2015-only/
     
-#test project: wix-in-vs2017
+#test project: SetupProject2017 # Appveyor test project name: wix-in-vs2017
 -
   matrix:
     only:
-      - PROJECT_NAME: wix-in-vs2017
+      - PROJECT_NAME: SetupProject2017
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
     verbosity: minimal
