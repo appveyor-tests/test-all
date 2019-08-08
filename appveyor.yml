@@ -8,9 +8,7 @@ environment:
   - PROJECT_NAME: semver2-nuget-restore
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_NAME: dotnetcore-nuget-pack
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
+  
    
     
 clone_script:
@@ -35,6 +33,9 @@ for:
         
   before_build:
   - dotnet restore
+  
+  build:
+    verbosity: minimal
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/
