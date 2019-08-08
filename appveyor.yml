@@ -36,7 +36,7 @@ environment:
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
   - PROJECT_NAME: dotnetcore-nuget-pack
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 201
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
    
     
 clone_script:
