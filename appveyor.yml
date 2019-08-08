@@ -5,6 +5,9 @@ environment:
 # A list of test projects
 ###########################
 
+  - PROJECT_NAME: semver2-nuget-restore
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
   - PROJECT_NAME: dotnetcore-nuget-pack
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
@@ -23,6 +26,18 @@ for:
 #project-specific settings
 ###########################
 
+#test project: semver2-nuget-restore
+-
+  matrix:
+    only:
+      - PROJECT_NAME: semver2-nuget-restore
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+        
+  before_build:
+  - dotnet restore
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
 
 #test project: dotnetcore-nuget-pack for VS-2017
 -
