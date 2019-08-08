@@ -8,7 +8,8 @@ environment:
   - PROJECT_NAME: semver2-nuget-restore
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  
+  - PROJECT_NAME: wix-in-vs2017
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
    
     
 clone_script:
@@ -36,6 +37,19 @@ for:
   
   build:
     verbosity: minimal
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
+#test project: wix-in-vs2017
+-
+  matrix:
+    only:
+      - PROJECT_NAME: wix-in-vs2017
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
+  build:
+    verbosity: minimal
+  test: off
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/
