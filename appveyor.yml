@@ -5,30 +5,10 @@ environment:
 # A list of test projects
 ###########################
 
-  - PROJECT_NAME: artifacts
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_NAME: artifacts
+  - PROJECT_NAME: dotnetcore-nuget-pack
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_NAME: WDK-10.0.14393.0
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_NAME: docker-tests
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: dotnet-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_NAME: dotnet-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_NAME: service-fabric-docker
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: appveyor-py-launcher
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
+   
     
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_NAME% %APPVEYOR_BUILD_FOLDER%
@@ -42,6 +22,23 @@ for:
 ###########################
 #project-specific settings
 ###########################
+
+
+#test project: dotnetcore-nuget-pack for VS-2017
+-
+  matrix:
+    only:
+      - PROJECT_NAME: dotnetcore-nuget-pack
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+  build:
+    publish_nuget: true
+    publish_nuget_symbols: true
+    include_nuget_references: true
+    verbosity: minimal
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
 
 #test project: WDK-10.0.14393.0
 -
