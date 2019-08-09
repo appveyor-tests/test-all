@@ -25,7 +25,52 @@ environment:
 
   - PROJECT_NAME: azure-unc-smb-share
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_NAME: semver2-nuget-restore
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
+  - PROJECT_NAME: SetupProject2017 # Appveyor test project name: wix-in-vs2017
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
+    
+  - PROJECT_NAME: artifacts
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_NAME: artifacts
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_NAME: WDK-10.0.14393.0
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_NAME: docker-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_NAME: dotnet-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_NAME: dotnet-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_NAME: service-fabric-docker
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_NAME: appveyor-py-launcher
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_NAME: dotnetcore-nuget-pack
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_NAME: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_NAME: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_NAME: aws-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+    
+  - PROJECT_NAME: aws-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_NAME% %APPVEYOR_BUILD_FOLDER%
 - sh: git clone https://github.com/appveyor-tests/$PROJECT_NAME $APPVEYOR_BUILD_FOLDER
