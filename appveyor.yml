@@ -70,7 +70,7 @@ for:
   - dotnet restore
   
   build:
-    verbosity: normal
+    verbosity: minimal
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/
@@ -82,7 +82,7 @@ for:
       - PROJECT_NAME: SetupProject2017
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
-    verbosity: normal
+    verbosity: minimal
   test: off
   
   skip_commits:
@@ -176,7 +176,7 @@ for:
       - PROJECT_NAME: android-app-test
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015 
   build:
-    verbosity: normal
+    verbosity: minimal
   test: off
   
   skip_commits:
@@ -189,7 +189,7 @@ for:
       - PROJECT_NAME: android-app-test
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
-    verbosity: normal
+    verbosity: minimal
   test: off
   
   skip_commits:
