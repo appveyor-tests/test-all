@@ -13,6 +13,12 @@ environment:
 
   - PROJECT_NAME: AzureCloudServiceVS2017
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_NAME: azure-powershell
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_NAME: azure-powershell
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
    
     
 clone_script:
