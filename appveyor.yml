@@ -5,49 +5,13 @@ environment:
 # A list of test projects
 ###########################
 
-  - PROJECT_NAME: semver2-nuget-restore
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: SetupProject2017 # Appveyor test project name: wix-in-vs2017
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
-    
-  - PROJECT_NAME: artifacts
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_NAME: artifacts
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: WDK-10.0.14393.0
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_NAME: docker-tests
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: dotnet-core
+  - PROJECT_NAME: azure-cloud-services
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
-  - PROJECT_NAME: dotnet-core
+  - PROJECT_NAME: azure-cloud-services
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_NAME: service-fabric-docker
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: appveyor-py-launcher
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
-  - PROJECT_NAME: dotnetcore-nuget-pack
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_NAME: android-app-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_NAME: android-app-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_NAME: aws-tools
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
-    
-  - PROJECT_NAME: aws-tools
+  - PROJECT_NAME: AzureCloudServiceVS2017
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
    
     
@@ -70,8 +34,7 @@ for:
   matrix:
     only:
       - PROJECT_NAME: semver2-nuget-restore
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
   before_build:
   - dotnet restore
   
@@ -89,6 +52,7 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
     verbosity: minimal
+  
   test: off
   
   skip_commits:
@@ -99,29 +63,33 @@ for:
   matrix:
     only:
       - PROJECT_NAME: dotnetcore-nuget-pack
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017       
   version: 44.55.{build}
-  image: Visual Studio 2017
+    
   assembly_info:
     patch: true
     file: '**\AssemblyInfo.*'
     assembly_version: '{version}'
     assembly_file_version: '{version}'
     assembly_informational_version: '{version}'
+  
   dotnet_csproj:
     patch: true
     file: '**\*.csproj'
     version: '{version}'
     package_version: '{version}'
+  
   before_build:
   - cmd: dotnet restore
+  
   build:
     publish_nuget: true
     publish_nuget_symbols: true
     include_nuget_references: true
     verbosity: minimal
+  
   test: off
+  
   deploy_script:
   - ps: .\deploy.ps1
   
@@ -153,6 +121,7 @@ for:
   - path: go17.zip
   - path: go17-2-link.zip
   - path: go16
+  
   on_failure:
   - ps: Get-EventLog AppVeyor -newest 10 | Format-List
   
@@ -169,6 +138,7 @@ for:
   - path: go17.zip
   - path: go17-2-link.zip
   - path: go16
+  
   on_failure:
   - ps: Get-EventLog AppVeyor -newest 10 | Format-List
   
@@ -183,6 +153,7 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015 
   build:
     verbosity: minimal
+  
   test: off
   
   skip_commits:
@@ -196,12 +167,68 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
     verbosity: minimal
+  
   test: off
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/
-    
+
+#test project: AzureCloudServiceVS2017
+-
+  matrix:
+    only:
+      - PROJECT_NAME: AzureCloudServiceVS2017
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
+  before_build:
+  - nuget restore
   
+  build:
+    verbosity: minimal
+  
+  test: off
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+
+#test project: azure-cloud-services VS2017 with cashing packages
+-
+  matrix:
+    only:
+      - PROJECT_NAME: azure-cloud-services
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
+  before_build:
+  - nuget restore
+
+  cache:
+  - packages
+
+  build:
+    verbosity: minimal
+    publish_wap: true
+    publish_azure: true
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
+ #test project: azure-cloud-services VS2015 with cashing packages
+-
+  matrix:
+    only:
+      - PROJECT_NAME: azure-cloud-services
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015 
+  before_build:
+  - nuget restore
+
+  cache:
+  - packages
+
+  build:
+    verbosity: minimal
+    publish_wap: true
+    publish_azure: true
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
     
 ##########################################################################
 #    global filters through skip_commits mechanism
