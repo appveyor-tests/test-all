@@ -37,6 +37,12 @@ environment:
 
   - PROJECT_NAME: dotnetcore-nuget-pack
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_NAME: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_NAME: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
    
     
 clone_script:
@@ -163,7 +169,32 @@ for:
   skip_commits:
     message: /ubuntu-only|vs2017-only/
     
-
+#test project: android-app-test VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_NAME: android-app-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015 
+  build:
+    verbosity: normal
+  test: off
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
+#test project: android-app-test VS 2017
+-
+  matrix:
+    only:
+      - PROJECT_NAME: android-app-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
+  build:
+    verbosity: normal
+  test: off
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
 
 ##########################################################################
 #    global filters through skip_commits mechanism
