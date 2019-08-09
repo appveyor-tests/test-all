@@ -20,6 +20,11 @@ environment:
   - PROJECT_NAME: azure-powershell
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
    
+  - PROJECT_NAME: azure-unc-smb-share
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_NAME: azure-unc-smb-share
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_NAME% %APPVEYOR_BUILD_FOLDER%
@@ -235,7 +240,32 @@ for:
   
   skip_commits:
     message: /ubuntu-only|vs2017-only/
-    
+ 
+ #test project azure-unc-smb-share VS2017
+-
+  matrix:
+    only:
+      - PROJECT_NAME: azure-unc-smb-share
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+  environment:
+    AZURE_SMB_KEY:
+      secure: if71+kDyW4wl7Xbfgzi5G0Faau1OcfdfT/KU9LK+9Cmjv/DINmssTw/bfsqvDfie4RiDUsy/zMCOiSxQZ9IkiHVgx9lrkfZ1/ysDn50qwvklCKJhTjhS+UQQ8cJPrZ9q
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+
+ #test project azure-unc-smb-share VS2015
+-
+  matrix:
+    only:
+      - PROJECT_NAME: azure-unc-smb-share
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+  environment:
+    AZURE_SMB_KEY:
+      secure: if71+kDyW4wl7Xbfgzi5G0Faau1OcfdfT/KU9LK+9Cmjv/DINmssTw/bfsqvDfie4RiDUsy/zMCOiSxQZ9IkiHVgx9lrkfZ1/ysDn50qwvklCKJhTjhS+UQQ8cJPrZ9q
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
 ##########################################################################
 #    global filters through skip_commits mechanism
 ##########################################################################
