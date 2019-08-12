@@ -12,6 +12,14 @@ environment:
   - PROJECT_REPO: unit-test-runners
     PROJECT_NAME: unit-test-runners-except
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: unit-test-runners
+    PROJECT_NAME: unit-test-runners-only-old-style
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: unit-test-runners
+    PROJECT_NAME: unit-test-runners-only-new-style
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
@@ -79,6 +87,63 @@ for:
     
   skip_commits:
     message: /ubuntu-only|vs2015-only/    
+    
+#test project: unit-test-runners-only-old-style
+-
+  matrix:
+    only:
+      - PROJECT_REPO: unit-test-runners
+        PROJECT_NAME: unit-test-runners-only-old-style
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  environment:
+    API_TOKEN:
+      secure: qjR+H97oWZqZsxCoIFUY2mLZVBpq2Pf/DvnV3nXWjhA=
+    APPVEYOR_BLOCK_DOTNETCORE_TESTS_AUTORUN: true
+  
+  install:
+  - cmd: nuget restore
+  
+  build:
+    verbosity: minimal
+
+  test:
+    assemblies:    
+      - XUnitTestProject.dll
+
+  after_test:
+  - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
+#test project: unit-test-runners-only-new-style
+-
+  matrix:
+    only:
+      - PROJECT_REPO: unit-test-runners
+        PROJECT_NAME: unit-test-runners-only-new-style
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  environment:
+    API_TOKEN:
+      secure: qjR+H97oWZqZsxCoIFUY2mLZVBpq2Pf/DvnV3nXWjhA=
+    APPVEYOR_BLOCK_DOTNETCORE_TESTS_AUTORUN: true
+  
+  install:
+  - cmd: nuget restore
+  
+  build:
+    verbosity: minimal
+
+  test:
+    assemblies:
+      only:
+      - XUnitTestProject.dll
+  
+  after_test:
+  - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
     
 #test project: semver2-nuget-restore
 -
