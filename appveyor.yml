@@ -83,6 +83,7 @@ for:
       - XUnit20TestProject.dll
   
   after_test:
+  - ps: Start-Sleep -s 10
   - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
     
   skip_commits:
@@ -111,6 +112,7 @@ for:
       - XUnitTestProject.dll
 
   after_test:
+  - ps: Start-Sleep -s 10
   - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
     
   skip_commits:
@@ -140,6 +142,7 @@ for:
       - XUnitTestProject.dll
   
   after_test:
+  - ps: Start-Sleep -s 10
   - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
     
   skip_commits:
