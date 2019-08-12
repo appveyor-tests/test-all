@@ -5,13 +5,7 @@ environment:
 # A list of test projects
 ###########################
 
-  - PROJECT_REPO: unit-test-runners
-    PROJECT_NAME: unit-test-runners
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
-  - PROJECT_REPO: unit-test-runners
-    PROJECT_NAME: unit-test-runners-except
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
   - PROJECT_REPO: unit-test-runners
     PROJECT_NAME: unit-test-runners-only-old-style
