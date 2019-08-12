@@ -19,6 +19,74 @@ environment:
   - PROJECT_REPO: unit-test-runners
     PROJECT_NAME: unit-test-runners-only-new-style
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: azure-cloud-services
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: azure-cloud-services
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: AzureCloudServiceVS2017
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: azure-powershell
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: azure-powershell
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+   
+  - PROJECT_REPO: azure-unc-smb-share
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: azure-unc-smb-share
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: semver2-nuget-restore
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: SetupProject2017
+    PROJECT_NAME: wix-in-vs2017
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
+    
+  - PROJECT_REPO: artifacts
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: artifacts
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: WDK-10.0.14393.0
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: docker-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: dotnet-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: dotnet-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: service-fabric-docker
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: appveyor-py-launcher
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: dotnetcore-nuget-pack
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: aws-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+    
+  - PROJECT_REPO: aws-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
 
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
@@ -148,7 +216,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: semver2-nuget-restore
+      - PROJECT_REPO: semver2-nuget-restore
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
   before_build:
   - dotnet restore
@@ -163,7 +231,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: SetupProject2017
+      - PROJECT_REPO: SetupProject2017
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
     verbosity: minimal
@@ -177,7 +245,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: dotnetcore-nuget-pack
+      - PROJECT_REPO: dotnetcore-nuget-pack
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017       
   version: 44.55.{build}
     
@@ -216,7 +284,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: WDK-10.0.14393.0
+      - PROJECT_REPO: WDK-10.0.14393.0
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   install:
   - ps: .\install.ps1
@@ -230,7 +298,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: artifacts
+      - PROJECT_REPO: artifacts
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
   artifacts:
   - path: go17.zip
@@ -247,7 +315,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: artifacts
+      - PROJECT_REPO: artifacts
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   artifacts:
   - path: go17.zip
@@ -264,7 +332,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: android-app-test
+      - PROJECT_REPO: android-app-test
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015 
   build:
     verbosity: minimal
@@ -278,7 +346,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: android-app-test
+      - PROJECT_REPO: android-app-test
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   build:
     verbosity: minimal
@@ -292,7 +360,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: AzureCloudServiceVS2017
+      - PROJECT_REPO: AzureCloudServiceVS2017
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   before_build:
   - nuget restore
@@ -309,7 +377,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: azure-cloud-services
+      - PROJECT_REPO: azure-cloud-services
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
   before_build:
   - nuget restore
@@ -329,7 +397,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: azure-cloud-services
+      - PROJECT_REPO: azure-cloud-services
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015 
   before_build:
   - nuget restore
@@ -349,7 +417,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: azure-unc-smb-share
+      - PROJECT_REPO: azure-unc-smb-share
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
   environment:
     AZURE_SMB_KEY:
@@ -362,7 +430,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_NAME: azure-unc-smb-share
+      - PROJECT_REPO: azure-unc-smb-share
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   environment:
     AZURE_SMB_KEY:
