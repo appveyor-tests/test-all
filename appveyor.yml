@@ -14,12 +14,6 @@ environment:
   - PROJECT_REPO: bash-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
-  - PROJECT_REPO: cache
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: cache
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015   
-
   - PROJECT_REPO: clone-folder-with-spaces
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
@@ -50,7 +44,7 @@ for:
 
   environment:
     ALL_PROJECTS: C:\my-projects
-  clone_folder: $(ALL_PROJECTS)\dir with spaces\for test project
+  clone_folder: $(ALL_PROJECTS)\clone-folder-with-spaces
     
   skip_commits:
     message: /ubuntu-only|vs2015-only/
