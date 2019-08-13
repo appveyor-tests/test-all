@@ -8,97 +8,11 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################
 
-  - PROJECT_REPO: unit-test-runners
-    PROJECT_NAME: unit-test-runners
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: unit-test-runners
-    PROJECT_NAME: unit-test-runners-except
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: unit-test-runners
-    PROJECT_NAME: unit-test-runners-only-old-style
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: unit-test-runners
-    PROJECT_NAME: unit-test-runners-only-new-style
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
   - PROJECT_REPO: bash-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
   - PROJECT_REPO: bash-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: bash-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
-    
-  - PROJECT_REPO: azure-cloud-services
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: azure-cloud-services
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-
-  - PROJECT_REPO: AzureCloudServiceVS2017
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: azure-powershell
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-
-  - PROJECT_REPO: azure-powershell
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-   
-  - PROJECT_REPO: azure-unc-smb-share
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-
-  - PROJECT_REPO: azure-unc-smb-share
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: semver2-nuget-restore
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: SetupProject2017
-    PROJECT_NAME: wix-in-vs2017
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
-    
-  - PROJECT_REPO: artifacts
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: artifacts
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: WDK-10.0.14393.0
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: docker-tests
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: dotnet-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: dotnet-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: service-fabric-docker
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: appveyor-py-launcher
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: dotnetcore-nuget-pack
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: android-app-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: android-app-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: aws-tools
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
-    
-  - PROJECT_REPO: aws-tools
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
 
 clone_script:
