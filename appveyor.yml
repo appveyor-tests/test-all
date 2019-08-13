@@ -21,6 +21,7 @@ clone_script:
 # if build is not built automatically
 # we run build script
 build_script:
+- cmd: echo %APPVEYOR_BUILD_FOLDER%
 - cmd: powershell .\build.ps1
 - sh: bash ./build.sh
 
