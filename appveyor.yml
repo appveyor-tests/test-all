@@ -8,10 +8,10 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################
 
-  - PROJECT_REPO: bash-test
+
+
+  - PROJECT_REPO: clone-folder-with-spaces
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-
 
     
 clone_script:
