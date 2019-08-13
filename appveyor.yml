@@ -53,7 +53,7 @@ for:
 
   environment:
     ALL_PROJECTS: C:\my-projects
-  clone_folder: $(ALL_PROJECTS)\bla
+  clone_folder: $(ALL_PROJECTS)\dir with spaces\for test project
     
   skip_commits:
     message: /ubuntu-only|vs2015-only/
