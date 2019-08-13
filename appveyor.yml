@@ -15,13 +15,13 @@ environment:
 
     
 clone_script:
+- cmd: echo %APPVEYOR_BUILD_FOLDER%
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
 - sh: git clone https://github.com/appveyor-tests/$PROJECT_REPO $APPVEYOR_BUILD_FOLDER
 
 # if build is not built automatically
 # we run build script
 build_script:
-- cmd: echo %APPVEYOR_BUILD_FOLDER%
 - cmd: powershell .\build.ps1
 - sh: bash ./build.sh
 
