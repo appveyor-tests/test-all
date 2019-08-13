@@ -2,8 +2,12 @@ environment:
   matrix:
     
 ###########################
-# A list of test projects
+# A list of test projects, each project is described by:
+#    -PROJECT_REPO
+#    -PROJECT_NAME (only if differenet from PROJECT_REPO name )
+#    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################
+
   - PROJECT_REPO: unit-test-runners
     PROJECT_NAME: unit-test-runners
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
@@ -19,6 +23,15 @@ environment:
   - PROJECT_REPO: unit-test-runners
     PROJECT_NAME: unit-test-runners-only-new-style
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: bash-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: bash-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: bash-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
     
   - PROJECT_REPO: azure-cloud-services
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
@@ -93,13 +106,14 @@ clone_script:
 - sh: git clone https://github.com/appveyor-tests/$PROJECT_REPO $APPVEYOR_BUILD_FOLDER
 
 # if build is not built automatically
+# we run build script
 build_script:
 - cmd: powershell .\build.ps1
 - sh: bash ./build.sh
 
 for:
 ################################################################
-#project-specific settings not scripted in project's build.ps1
+# project-specific settings not scripted in project's build.ps1
 ################################################################
 
 #test project: unit-test-runners
