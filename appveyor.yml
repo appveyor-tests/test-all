@@ -12,6 +12,9 @@ environment:
 
   - PROJECT_REPO: clone-folder-with-spaces
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: clone-folder-with-spaces
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
     
 clone_script:
@@ -54,6 +57,7 @@ for:
   clone_script:
   - cmd: git clone  -q --branch=master https://github.com/appveyor-tests/%PROJECT_REPO% "C:\my-projects\dir with spaces\for test project"
   - ps: cd "C:\my-projects\dir with spaces\for test project"
+  - ps: ls
 
   skip_commits:
     message: /ubuntu-only|vs2015-only/
@@ -65,10 +69,11 @@ for:
       - PROJECT_REPO: clone-folder-with-spaces
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
 
-  environment:
-    ALL_PROJECTS: C:\my-projects
-  clone_folder: $(ALL_PROJECTS)\dir with spaces\for test project
-    
+  clone_script:
+  - cmd: git clone  -q --branch=master https://github.com/appveyor-tests/%PROJECT_REPO% "C:\my-projects\dir with spaces\for test project"
+  - ps: cd "C:\my-projects\dir with spaces\for test project"
+  - ps: ls
+
   skip_commits:
     message: /ubuntu-only|vs2017-only/
     
