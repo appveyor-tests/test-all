@@ -44,7 +44,7 @@ for:
   - cmd: powershell .\init.ps1
 
   skip_commits:
-  message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only/
 
 #test project: c-projects-folder-should-not-exist for VS 2015
 -
@@ -56,7 +56,7 @@ for:
   - cmd: powershell .\init.ps1
 
   skip_commits:
-  message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only/
     
 #test project: clone-folder-with-spaces for VS 2017
 -
