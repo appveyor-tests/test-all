@@ -9,12 +9,8 @@ environment:
 ###########################
 
 
-
-  - PROJECT_REPO: clone-folder-with-spaces
+  - PROJECT_REPO: bash-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: clone-folder-with-spaces
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
     
 clone_script:
@@ -32,21 +28,7 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
-#test project: bash-test
--
-  matrix:
-    only:
-      - PROJECT_REPO: bash-test
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
-  environment:
-    APPVEYOR_RDP_PASSWORD: aohPass123!
-  on_finish:
-    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
-  
-  
-  
-  
 #test project: clone-folder-with-spaces for VS 2017
 -
   matrix:
