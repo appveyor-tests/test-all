@@ -23,6 +23,12 @@ environment:
     
   - PROJECT_REPO: dacpac-local-2014
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: dacpac-local-2016
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: dacpac-local-2016
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
@@ -478,6 +484,45 @@ for:
 
   skip_commits:
     message: /ubuntu-only|vs2015-only/
+
+ #test project: dacpac-local-2016 for VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: dacpac-local-2014
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  services: mssql2014
+  build: off
+  artifacts:
+  - path: db\test_db.dacpac
+    name: Mydacpac
+  deploy:
+  - provider: Local
+    Mydacpac.deploy_database: true
+    Mydacpac.connection_string: Server=(local)\SQL2014;Database=my_app;Integrated security=SSPI;
+
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+
+ #test project: dacpac-local-2016 for VS 2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: dacpac-local-2014
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  services: mssql2014
+  build: off
+  artifacts:
+  - path: db\test_db.dacpac
+    name: Mydacpac
+  deploy:
+  - provider: Local
+    Mydacpac.deploy_database: true
+    Mydacpac.connection_string: Server=(local)\SQL2014;Database=my_app;Integrated security=SSPI;
+
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
     
 ##########################################################################
 #    global filters through skip_commits mechanism
