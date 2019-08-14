@@ -15,7 +15,6 @@ environment:
 
     
 clone_script:
-- cmd: echo %APPVEYOR_BUILD_FOLDER%
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
 - sh: git clone https://github.com/appveyor-tests/$PROJECT_REPO $APPVEYOR_BUILD_FOLDER
 
@@ -54,7 +53,7 @@ for:
 
   environment:
     ALL_PROJECTS: C:\my-projects
-  clone_folder: $(ALL_PROJECTS)\dir with spaces\for test project
+  clone_folder: '$(ALL_PROJECTS)\dir with spaces\for test project'
     
   skip_commits:
     message: /ubuntu-only|vs2015-only/
