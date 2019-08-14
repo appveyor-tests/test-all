@@ -8,11 +8,6 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################
 
-  - PROJECT_REPO: dacpac-sqlpackage-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
-  - PROJECT_REPO: dacpac-sqlpackage-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
   - PROJECT_REPO: git-long-paths
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
