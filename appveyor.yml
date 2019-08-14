@@ -489,9 +489,9 @@ for:
 -
   matrix:
     only:
-      - PROJECT_REPO: dacpac-local-2014
+      - PROJECT_REPO: dacpac-local-2016
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
-  services: mssql2014
+  services: mssql2016
   build: off
   artifacts:
   - path: db\test_db.dacpac
@@ -499,7 +499,7 @@ for:
   deploy:
   - provider: Local
     Mydacpac.deploy_database: true
-    Mydacpac.connection_string: Server=(local)\SQL2014;Database=my_app;Integrated security=SSPI;
+    Mydacpac.connection_string: Server=(local)\SQL2016;Database=my_app;Integrated security=SSPI;
 
   skip_commits:
     message: /ubuntu-only|vs2017-only/
@@ -508,9 +508,9 @@ for:
 -
   matrix:
     only:
-      - PROJECT_REPO: dacpac-local-2014
+      - PROJECT_REPO: dacpac-local-2016
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
-  services: mssql2014
+  services: mssql2016
   build: off
   artifacts:
   - path: db\test_db.dacpac
@@ -518,7 +518,7 @@ for:
   deploy:
   - provider: Local
     Mydacpac.deploy_database: true
-    Mydacpac.connection_string: Server=(local)\SQL2014;Database=my_app;Integrated security=SSPI;
+    Mydacpac.connection_string: Server=(local)\SQL2016;Database=my_app;Integrated security=SSPI;
 
   skip_commits:
     message: /ubuntu-only|vs2015-only/
