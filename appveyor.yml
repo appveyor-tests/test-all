@@ -41,7 +41,7 @@ for:
   build:
     verbosity: minimal
   
-  after_build::
+  after_build:
   - ps: .\after_build.ps1   
   
   skip_commits:
