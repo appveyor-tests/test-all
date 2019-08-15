@@ -9,10 +9,10 @@ environment:
 ###########################
 
      
-  - PROJECT_REPO: npm-install
+  - PROJECT_REPO: nuget-restore
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: npm-install
+  - PROJECT_REPO: nuget-restore
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
 clone_script:
@@ -30,7 +30,47 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
-#test project: nodejs-versions for VS2015
+#test project: nuget-restore for VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nuget-restore
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  init:
+  - nuget
+
+  before_build: 
+    - ps: nuget restore -PackagesDirectory $env:APPVEYOR_BUILD_FOLDER\packages
+    - ps: 'if (-not (Test-Path $env:APPVEYOR_BUILD_FOLDER\packages)){ throw "packages not restored"; }'
+    - ps: Write-Host "passed"
+  
+  build:
+    verbosity: minimal
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+
+#test project: nuget-restore for VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nuget-restore
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  init:
+  - nuget
+
+  before_build: 
+    - ps: nuget restore -PackagesDirectory $env:APPVEYOR_BUILD_FOLDER\packages
+    - ps: 'if (-not (Test-Path $env:APPVEYOR_BUILD_FOLDER\packages)){ throw "packages not restored"; }'
+    - ps: Write-Host "passed"
+  
+  build:
+    verbosity: minimal
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
+ #test project: nodejs-versions for VS2015
 -
   matrix:
     only:
