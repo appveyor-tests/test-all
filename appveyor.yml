@@ -48,6 +48,25 @@ for:
     
   skip_commits:
     message: /ubuntu-only|vs2015-only/
+
+#test project: postgresql VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: postgresql
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  max_jobs: 1
+
+  environment:
+    matrix:
+    - PGSQL_VERSION: 9.3
+    - PGSQL_VERSION: 9.4
+    - PGSQL_VERSION: 9.5
+    - PGSQL_VERSION: 9.6
+    - PGSQL_VERSION: 10
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
     
 #test project: package-web-app-with-web-jobs VS2017
 -
