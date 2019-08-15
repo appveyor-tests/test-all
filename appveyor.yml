@@ -8,13 +8,11 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################
 
-    
-
-    
-  - PROJECT_REPO: nodejs-versions
+     
+  - PROJECT_REPO: npm-install
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: nodejs-versions
+  - PROJECT_REPO: npm-install
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
 clone_script:
