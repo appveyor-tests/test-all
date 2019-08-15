@@ -45,7 +45,7 @@ for:
     - ps: Write-Host "passed"
   
   build:
-    verbosity: minimal
+    verbosity: normal
     
   skip_commits:
     message: /ubuntu-only|vs2015-only/
@@ -65,7 +65,7 @@ for:
     - ps: Write-Host "passed"
   
   build:
-    verbosity: minimal
+    verbosity: normal
     
   skip_commits:
     message: /ubuntu-only|vs2017-only/
