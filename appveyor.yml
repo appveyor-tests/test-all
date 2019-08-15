@@ -11,10 +11,10 @@ environment:
     
 
     
-  - PROJECT_REPO: jspm-config-auth
+  - PROJECT_REPO: msbuild-community-tasks-chocolatey
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: jspm-config-auth
+  - PROJECT_REPO: msbuild-community-tasks-chocolatey
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
 clone_script:
