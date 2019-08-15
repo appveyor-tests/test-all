@@ -9,10 +9,10 @@ environment:
 ###########################
 
     
-  - PROJECT_REPO: package-web-app-with-web-jobs
+  - PROJECT_REPO: postgresql
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: package-web-app-with-web-jobs
+  - PROJECT_REPO: postgresql
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
 clone_script:
