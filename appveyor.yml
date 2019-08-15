@@ -48,7 +48,24 @@ for:
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/
-    
+
+
+#test project: jspm-config-auth for VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: jspm-config-auth
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  environment:
+    JSPM_GITHUB_AUTH_TOKEN:
+      secure: S8ZjJft9L3SuErtBTUzt/dCVWTX9hQqCkzHaM/aVBOfS5y8Jb7gi2LRrwVQsVnIpk9Zm5l1JdpCvT/pJnfmv3P04+EO7EwoNZkzrXbDFVZk=
+  
+  install:
+  - ps: .\install.ps1
+  
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
     
 #test project: dacpac-sqlpackage-test for VS2017
 -
