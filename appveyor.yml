@@ -30,6 +30,25 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: postgresql VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: postgresql
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  max_jobs: 1
+
+  environment:
+    matrix:
+    - PGSQL_VERSION: 9.3
+    - PGSQL_VERSION: 9.4
+    - PGSQL_VERSION: 9.5
+    - PGSQL_VERSION: 9.6
+    - PGSQL_VERSION: 10
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
 #test project: package-web-app-with-web-jobs VS2017
 -
   matrix:
