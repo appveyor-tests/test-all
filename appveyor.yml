@@ -11,10 +11,10 @@ environment:
     
 
     
-  - PROJECT_REPO: msbuild-community-tasks-chocolatey
+  - PROJECT_REPO: nodejs-versions
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: msbuild-community-tasks-chocolatey
+  - PROJECT_REPO: nodejs-versions
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
 clone_script:
@@ -31,6 +31,29 @@ for:
 ################################################################
 # project-specific settings not scripted in project's build.ps1
 ################################################################
+
+#test project: nodejs-versions for VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nodejs-versions
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  environment:
+    expected_default_node: v8.
+    expected_lts_node: v10.
+    expected_stable_node: v10.
+    expected_current_node: v12
+  
+  init:
+  - appveyor version
+  - echo %AVVM_DOWNLOAD_URL%
+  
+  artifacts:
+  - path: '**\*.txt'
+   
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+
 
 #test project: jspm-config-auth for VS2017
 -
@@ -62,8 +85,7 @@ for:
   
   install:
   - ps: .\install.ps1
-  
-  
+   
   skip_commits:
     message: /ubuntu-only|vs2017-only/
     
