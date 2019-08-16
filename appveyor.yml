@@ -9,10 +9,10 @@ environment:
 ###########################
 
     
-  - PROJECT_REPO: postgresql
+  - PROJECT_REPO: powershell-core
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: postgresql
+  - PROJECT_REPO: powershell-core
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
 clone_script:
@@ -30,6 +30,38 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: powershell-core VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: powershell-core
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  clone_script:
+  - pwsh: |
+      Write-host "PowerShell Core version $($PSVersionTable.PSVersion)"
+      if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
+  build: off
+  test: off
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+
+#test project: powershell-core VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: powershell-core
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  clone_script:
+  - pwsh: |
+      Write-host "PowerShell Core version $($PSVersionTable.PSVersion)"
+      if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
+  build: off
+  test: off
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
 #test project: postgresql VS2017
 -
   matrix:
