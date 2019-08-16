@@ -9,10 +9,10 @@ environment:
 ###########################
 
     
-  - PROJECT_REPO: powershell-core
+  - PROJECT_REPO: powershell-start-job-slow-regression
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: powershell-core
+  - PROJECT_REPO: powershell-start-job-slow-regression
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
 clone_script:
