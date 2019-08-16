@@ -8,14 +8,13 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    PGSQL_VERSION: 9.3
+ps-core-windows-appveyor-cmdlets
 
-    
-  - PROJECT_REPO: postgresql
+  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    PGSQL_VERSION: 10
+    
+  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
     
 clone_script:
