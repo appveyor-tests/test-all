@@ -8,7 +8,6 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
-ps-core-windows-appveyor-cmdlets
 
   - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
