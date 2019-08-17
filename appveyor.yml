@@ -9,16 +9,17 @@ environment:
 ###########################  
 
 
-
-  - PROJECT_REPO: ruby-test
+  - PROJECT_REPO: ps-iswindows-islinux-vars
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    bundler_version: 1.17.1
-    gem_version: 2.7.8
     
-  - PROJECT_REPO: ruby-test
+  - PROJECT_REPO: ps-iswindows-islinux-vars
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    bundler_version: 1.17.1
-    gem_version: 2.7.8
+    
+  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
 
     
