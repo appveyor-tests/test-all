@@ -10,10 +10,10 @@ environment:
 
 
 
-  - PROJECT_REPO: python-miniconda-tests
+  - PROJECT_REPO: qt-tests
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
-  - PROJECT_REPO: python-miniconda-tests
+  - PROJECT_REPO: qt-tests
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
 
