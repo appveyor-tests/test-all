@@ -9,6 +9,14 @@ environment:
 ###########################  
 
 
+
+  - PROJECT_REPO: python-miniconda-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: python-miniconda-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+
   - PROJECT_REPO: ps-iswindows-islinux-vars
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
