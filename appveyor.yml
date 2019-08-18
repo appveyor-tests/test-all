@@ -10,11 +10,9 @@ environment:
 
 
     
-  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
+  - PROJECT_REPO: postgresql
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.3
 
 
     
