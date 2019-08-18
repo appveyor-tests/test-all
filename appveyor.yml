@@ -30,6 +30,25 @@ environment:
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     PGSQL_VERSION: 10
 
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.3
+
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.4
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.5
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.6
+  
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 10
     
     
 clone_script:
