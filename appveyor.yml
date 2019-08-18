@@ -32,16 +32,6 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
--
-  matrix:
-    only:
-    - PROJECT_REPO: postgresql
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      PGSQL_VERSION: 9.3
-  environment:
-    APPVEYOR_RDP_PASSWORD: aohPass123!
-  on_finish:
-    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 #test project: powershell-core VS2017
 -
