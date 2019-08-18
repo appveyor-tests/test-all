@@ -37,7 +37,7 @@ for:
     - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 #test project: powershell-core VS2017
--
+
   matrix:
     only:
       - PROJECT_REPO: powershell-core
