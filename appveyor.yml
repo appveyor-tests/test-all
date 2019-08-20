@@ -8,11 +8,11 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
-  - PROJECT_REPO: service-fabric-dotnet-getting-started
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    SQL_INSTANCE_NAME: SQL2008R2SP2
     
-  - PROJECT_REPO: service-fabric-dotnet-getting-started
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017   
+
 
 
 
