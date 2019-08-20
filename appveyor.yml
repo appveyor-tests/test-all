@@ -8,33 +8,13 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
-  - PROJECT_REPO: ps-iswindows-islinux-vars
+  - PROJECT_REPO: rust-ssl-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: ps-iswindows-islinux-vars
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-    
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.3
+    RUSTUP_USE_HYPER: 1
 
-  - PROJECT_REPO: postgresql
+  - PROJECT_REPO: rust-ssl-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.4
-    
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.5
-    
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.6
-  
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 10
-    
+    RUSTUP_USE_HYPER: 1   
     
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
