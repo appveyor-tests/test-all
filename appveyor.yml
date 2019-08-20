@@ -8,14 +8,13 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
-
-
-    
-  - PROJECT_REPO: selenium-tests
+  - PROJECT_REPO: service-fabric-dotnet-getting-started
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
     
-  - PROJECT_REPO: selenium-tests
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017    
+  - PROJECT_REPO: service-fabric-dotnet-getting-started
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017   
+
+
 
     
 clone_script:
@@ -34,6 +33,42 @@ for:
 ################################################################
 
 
+#test project: service-fabric-dotnet-getting-started VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: service-fabric-dotnet-getting-started
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015   
+
+  build_script:
+  - nuget restore Services\WordCount\WordCount.sln
+  - msbuild Services\WordCount\WordCount.sln
+  - nuget restore Actors\VoiceMailBox\VoiceMailBox.sln
+  - msbuild Actors\VoiceMailBox\VoiceMailBox.sln
+
+  test: off
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
+#test project: service-fabric-dotnet-getting-started VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: service-fabric-dotnet-getting-started
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017   
+
+  build_script:
+  - nuget restore Services\WordCount\WordCount.sln
+  - msbuild Services\WordCount\WordCount.sln
+  - nuget restore Actors\VoiceMailBox\VoiceMailBox.sln
+  - msbuild Actors\VoiceMailBox\VoiceMailBox.sln
+
+  test: off
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
 #test project: selenium-tests VS2015
 -
   matrix:
@@ -57,6 +92,9 @@ for:
   on_finish:
     - ps: Get-ChildItem .\*.png -Recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
     
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
 #test project: selenium-tests VS2017
 -
   matrix:
@@ -79,6 +117,9 @@ for:
 
   on_finish:
     - ps: Get-ChildItem .\*.png -Recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
     
     
 #test project: package-web-app-with-web-jobs VS2017
