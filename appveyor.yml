@@ -16,6 +16,12 @@ environment:
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     RUSTUP_USE_HYPER: 1   
     
+  - PROJECT_REPO: powershell-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: powershell-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
 - sh: git clone https://github.com/appveyor-tests/$PROJECT_REPO $APPVEYOR_BUILD_FOLDER
@@ -32,37 +38,6 @@ for:
 ################################################################
 
 
-#test project: powershell-core VS2017
--
-  matrix:
-    only:
-      - PROJECT_REPO: powershell-core
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
-  clone_script:
-  - pwsh: |
-      Write-host "PowerShell Core version $($PSVersionTable.PSVersion)"
-      if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
-  build: off
-  test: off
-    
-  skip_commits:
-    message: /ubuntu-only|vs2015-only/
-
-#test project: powershell-core VS2015
--
-  matrix:
-    only:
-      - PROJECT_REPO: powershell-core
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
-  clone_script:
-  - pwsh: |
-      Write-host "PowerShell Core version $($PSVersionTable.PSVersion)"
-      if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
-  build: off
-  test: off
-    
-  skip_commits:
-    message: /ubuntu-only|vs2017-only/
     
     
 #test project: package-web-app-with-web-jobs VS2017
