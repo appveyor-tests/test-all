@@ -27,7 +27,26 @@ environment:
   - PROJECT_REPO: sql-server-instances
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     SQL_INSTANCE_NAME: SQL2017
+
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2008R2SP2
     
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2012SP1
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2014
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2016
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2017
 
    
 
