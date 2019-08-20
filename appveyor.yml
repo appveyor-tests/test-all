@@ -9,14 +9,10 @@ environment:
 ###########################  
 
 
+
     
-  - PROJECT_REPO: powershell-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: powershell-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-      
+  - PROJECT_REPO: selenium-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
 
     
 clone_script:
@@ -35,6 +31,28 @@ for:
 ################################################################
 
 
+#test project: selenium-tests VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: selenium-tests
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015   
+
+  install:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/set-screenresolution.ps1'))
+  - ps: Set-ScreenResolution 1600 1200
+
+  before_build:
+    - nuget restore
+    
+  build:
+    verbosity: normal
+    
+  after_test:
+    - ps: .\take-screenshot.ps1
+
+  on_finish:
+    - ps: Get-ChildItem .\*.png -Recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
     
     
 #test project: package-web-app-with-web-jobs VS2017
