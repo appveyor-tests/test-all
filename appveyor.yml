@@ -8,13 +8,7 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
-  - PROJECT_REPO: rust-ssl-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    RUSTUP_USE_HYPER: 1
 
-  - PROJECT_REPO: rust-ssl-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    RUSTUP_USE_HYPER: 1   
     
   - PROJECT_REPO: powershell-core
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
