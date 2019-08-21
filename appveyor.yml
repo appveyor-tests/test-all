@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: sxs-vs7
+  - PROJECT_REPO: unc-test-python
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: sxs-vs7
+  - PROJECT_REPO: unc-test-python
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
