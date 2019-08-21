@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: start-bitstransfer-test
+  - PROJECT_REPO: sxs-vs7
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: start-bitstransfer-test
+  - PROJECT_REPO: sxs-vs7
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
