@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: vdproj-test
+  - PROJECT_REPO: web-app-packaging-for-xcopy
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: vdproj-test
+  - PROJECT_REPO: web-app-packaging-for-xcopy
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
@@ -34,6 +34,41 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+
+#test project: web-app-packaging-for-xcopy VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: web-app-packaging-for-xcopy
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  before_build:
+    - nuget restore
+
+  build:
+    publish_wap_xcopy: true
+
+  test: off
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
+    
+#test project: web-app-packaging-for-xcopy VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: web-app-packaging-for-xcopy
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  before_build:
+    - nuget restore
+
+  build:
+    publish_wap_xcopy: true
+
+  test: off
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/
+    
 
 #test project: service-fabric-dotnet-getting-started VS2015
 -
