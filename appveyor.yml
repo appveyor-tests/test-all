@@ -9,9 +9,11 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: sql-server-restore-bak
+  - PROJECT_REPO: start-bitstransfer-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    SQL_INSTANCE_NAME: SQL2016
+    
+  - PROJECT_REPO: start-bitstransfer-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
    
