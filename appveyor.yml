@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: web-app-packaging-for-xcopy
+  - PROJECT_REPO: where-tools
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: web-app-packaging-for-xcopy
+  - PROJECT_REPO: where-tools
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
