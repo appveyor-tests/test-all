@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: wix3x-pre311-test
+  - PROJECT_REPO: yarn-tests
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: wix3x-pre311-test
+  - PROJECT_REPO: yarn-tests
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
