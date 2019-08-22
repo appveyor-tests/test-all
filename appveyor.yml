@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: where-tools
+  - PROJECT_REPO: ssdt-dacpac
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: where-tools
+  - PROJECT_REPO: ssdt-dacpac
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
@@ -34,6 +34,32 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: ssdt-dacpac VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: ssdt-dacpac
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  environment:
+    TEST_CONNECTION_STRING: Server=(local)\SQL2014;Database=MyDatabase_test;User ID=sa;Password=Password12!
+  install:
+  - where sqlpackage
+
+  build:
+    verbosity: normal
+
+  services:
+    - mssql2014
+
+  after_build:
+    - '"C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync -source:dbDacFx="%appveyor_build_folder%\MyDatabase\bin\Debug\MyDatabase.dacpac" -dest:dbDacFx="%TEST_CONNECTION_STRING%",dacpacAction=Deploy,CreateNewDatabase=True'
+
+  # make sure tables have been created
+  test_script:
+    - ps: .\test_script.ps1
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/
 
 #test project: web-app-packaging-for-xcopy VS2017
 -
