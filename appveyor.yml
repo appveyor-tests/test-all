@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: service-fabric-dotnet-getting-started
+  - PROJECT_REPO: wix3x-pre311-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: service-fabric-dotnet-getting-started
+  - PROJECT_REPO: wix3x-pre311-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
@@ -34,6 +34,47 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+    
+#test project: wix3x-pre311-test VS2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: wix3x-pre311-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  init:
+  - appveyor version
+  - git --version
+
+  assembly_info:
+    patch: true
+
+  artifacts:
+    - path: '**\*.msi'
+      name: MyApp
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/    
+
+#test project: wix3x-pre311-test VS2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: wix3x-pre311-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  init:
+  - appveyor version
+  - git --version
+
+  assembly_info:
+    patch: true
+
+  artifacts:
+    - path: '**\*.msi'
+      name: MyApp
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/  
+    
 #test project: ssdt-dacpac VS2017
 -
   matrix:
