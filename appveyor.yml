@@ -9,10 +9,10 @@ environment:
 ###########################  
 
     
-  - PROJECT_REPO: ssdt-dacpac
+  - PROJECT_REPO: service-fabric-dotnet-getting-started
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: ssdt-dacpac
+  - PROJECT_REPO: service-fabric-dotnet-getting-started
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
