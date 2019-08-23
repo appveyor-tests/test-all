@@ -38,7 +38,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_REPO: powershell-core
+      - PROJECT_REPO: ps-iswindows-islinux-vars
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
   test_script:
     - ps: .\test.ps1
@@ -50,7 +50,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_REPO: powershell-core
+      - PROJECT_REPO: ps-iswindows-islinux-vars
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
   test_script:
     - ps: .\test.ps1
