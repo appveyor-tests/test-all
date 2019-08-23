@@ -8,10 +8,10 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
    
-  - PROJECT_REPO: ps-iswindows-islinux-vars
+  - PROJECT_REPO: psgallery-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: ps-iswindows-islinux-vars
+  - PROJECT_REPO: psgallery-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
@@ -34,6 +34,34 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+
+
+#test project: psgallery-test VS 2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: ps-iswindows-islinux-vars
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  environment:
+    psg_api_key:
+      secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/   
+
+#test project: psgallery-test VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: ps-iswindows-islinux-vars
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
+  environment:
+    psg_api_key:
+      secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/   
+        
 #test project: ps-iswindows-islinux-vars VS 2017
 -
   matrix:
