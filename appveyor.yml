@@ -40,7 +40,7 @@ for:
     only:
       - PROJECT_REPO: powershell-core
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
-  
+  build: off
   test_script:
   - ps: .\test.ps1
   
@@ -53,7 +53,7 @@ for:
     only:
       - PROJECT_REPO: powershell-core
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
-  
+  build: off
   test_script:
   - ps: .\test.ps1
   
