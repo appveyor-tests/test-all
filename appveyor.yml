@@ -8,10 +8,10 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
    
-  - PROJECT_REPO: powershell-core
+  - PROJECT_REPO: ps-iswindows-islinux-vars
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: powershell-core
+  - PROJECT_REPO: ps-iswindows-islinux-vars
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
 
