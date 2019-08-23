@@ -14,9 +14,8 @@ environment:
   - PROJECT_REPO: psgallery-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
-
-
-   
+  - PROJECT_REPO: jspm-config-auth
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
     
 clone_script:
@@ -34,7 +33,7 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
-
+    
 
 #test project: psgallery-test VS 2017
 -
