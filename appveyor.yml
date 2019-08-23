@@ -34,6 +34,20 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: ps-iswindows-islinux-vars VS 2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: powershell-core
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
+  
+  test_script:
+  - ps: if ($env:windir -and $isWindows -ne $true) { throw '$isWindows is not defined'; }
+  - ps: if ($env:windir -and $isLinux -ne $false) { throw '$isLinux is not defined'; }
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/   
+    
 #test project: powershell-core VS2017
 -
   matrix:
