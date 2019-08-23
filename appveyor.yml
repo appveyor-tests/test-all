@@ -14,7 +14,7 @@ environment:
   - PROJECT_REPO: psgallery-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
-  - PROJECT_REPO: jspm-config-auth
+  - PROJECT_REPO: unit-test-runners-except
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
     
