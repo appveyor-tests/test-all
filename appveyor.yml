@@ -42,7 +42,7 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
   build: off
   test_script:
-  - ps: .\test.ps1
+    - ps: .\test.ps1
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/   
@@ -55,7 +55,7 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
   build: off
   test_script:
-  - ps: .\test.ps1
+    - ps: .\test.ps1
   
   skip_commits:
     message: /ubuntu-only|vs2017-only/   
