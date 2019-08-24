@@ -24,6 +24,445 @@ environment:
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     DEPLOYMENT_PROVIDER: AppveyorEnvironment
     
+  - PROJECT_REPO: secure-file-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: secure-file-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+  
+  - PROJECT_REPO: ps-iswindows-islinux-vars
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: ps-iswindows-islinux-vars
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: powershell-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: powershell-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.3
+
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.4
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.5
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.6
+  
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 10
+
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2008R2SP2
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2012SP1
+
+  - PROJECT_REPO: vdproj-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: vdproj-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: yarn-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: yarn-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: wix3x-pre311-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: wix3x-pre311-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: ssdt-dacpac
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: ssdt-dacpac
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: where-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: where-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: web-app-packaging-for-xcopy
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: web-app-packaging-for-xcopy
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: vdproj-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: vdproj-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: unc-test-python
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: unc-test-python
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: sxs-vs7
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: sxs-vs7
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: start-bitstransfer-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: start-bitstransfer-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: sql-server-restore-bak
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2016
+
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    SQL_INSTANCE_NAME: SQL2008R2SP2
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    SQL_INSTANCE_NAME: SQL2012SP1
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    SQL_INSTANCE_NAME: SQL2014
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    SQL_INSTANCE_NAME: SQL2016
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    SQL_INSTANCE_NAME: SQL2017
+
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2008R2SP2
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2012SP1
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2014
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2016
+    
+  - PROJECT_REPO: sql-server-instances
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    SQL_INSTANCE_NAME: SQL2017
+
+  - PROJECT_REPO: service-fabric-dotnet-getting-started
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+    
+  - PROJECT_REPO: service-fabric-dotnet-getting-started
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017   
+
+  - PROJECT_REPO: selenium-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+    
+  - PROJECT_REPO: selenium-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017  
+
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    PGSQL_VERSION: 9.3
+
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    PGSQL_VERSION: 9.4
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    PGSQL_VERSION: 9.5
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    PGSQL_VERSION: 9.6
+  
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    PGSQL_VERSION: 10
+
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.3
+
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.4
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.5
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 9.6
+  
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    PGSQL_VERSION: 10
+
+  - PROJECT_REPO: ps-iswindows-islinux-vars
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: ps-iswindows-islinux-vars
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 20
+
+  - PROJECT_REPO: rust-ssl-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    RUSTUP_USE_HYPER: 1
+
+  - PROJECT_REPO: rust-ssl-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    RUSTUP_USE_HYPER: 1   
+    
+  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: ps-core-windows-appveyor-cmdlets
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: ruby-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    bundler_version: 1.17.1
+    gem_version: 2.7.8
+    
+  - PROJECT_REPO: ruby-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    bundler_version: 1.17.1
+    gem_version: 2.7.8
+
+  - PROJECT_REPO: qt-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: qt-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: python-miniconda-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: python-miniconda-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+  
+  - PROJECT_REPO: psexec-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: psexec-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: powershell-start-job-slow-regression
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: powershell-start-job-slow-regression
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: powershell-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: powershell-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: postgresql
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: package-web-app-with-web-jobs
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: package-web-app-with-web-jobs
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: nuget-restore
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: nuget-restore
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: npm-install
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: npm-install
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: nodejs-versions
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: nodejs-versions
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: msbuild-community-tasks-chocolatey
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: msbuild-community-tasks-chocolatey
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: jspm-config-auth
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: jspm-config-auth
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: git-long-paths
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: git-long-paths
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: dacpac-sqlpackage-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: dacpac-sqlpackage-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: bash-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: bash-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: bash-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
+
+  - PROJECT_REPO: clone-folder-with-spaces
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: clone-folder-with-spaces
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: unit-test-runners
+    PROJECT_NAME: unit-test-runners
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: unit-test-runners
+    PROJECT_NAME: unit-test-runners-except
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: unit-test-runners
+    PROJECT_NAME: unit-test-runners-only-old-style
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: unit-test-runners
+    PROJECT_NAME: unit-test-runners-only-new-style
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: azure-cloud-services
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: azure-cloud-services
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: AzureCloudServiceVS2017
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: azure-powershell
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: azure-powershell
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+   
+  - PROJECT_REPO: azure-unc-smb-share
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: azure-unc-smb-share
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: semver2-nuget-restore
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: SetupProject2017
+    PROJECT_NAME: wix-in-vs2017
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017 
+    
+  - PROJECT_REPO: artifacts
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: artifacts
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: WDK-10.0.14393.0
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: docker-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: dotnet-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: dotnet-core
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: service-fabric-docker
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: appveyor-py-launcher
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: dotnetcore-nuget-pack
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: android-app-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: aws-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+    
+  - PROJECT_REPO: aws-tools
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: cache
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: cache
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015 
+ 
+  - PROJECT_REPO: c-projects-folder-should-not-exist
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - PROJECT_REPO: c-projects-folder-should-not-exist
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+  - PROJECT_REPO: dacpac-local-2014
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: dacpac-local-2014
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: dacpac-local-2016
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: dacpac-local-2016
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+    
 
 
     
