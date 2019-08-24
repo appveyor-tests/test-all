@@ -8,10 +8,10 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
    
-  - PROJECT_REPO: psgallery-test
+  - PROJECT_REPO: secure-file-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: psgallery-test
+  - PROJECT_REPO: secure-file-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
     
@@ -30,8 +30,34 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
-    
 
+
+#test project: secure-file-test VS 2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: secure-file-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
+  environment:
+    my_secret:
+      secure: Q3rkG9Khjq7DVfHJMdDzTw==    
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/  
+    
+#test project: secure-file-test VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: secure-file-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+  environment:
+    my_secret:
+      secure: Q3rkG9Khjq7DVfHJMdDzTw==    
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/  
+    
 #test project: psgallery-test VS 2017
 -
   matrix:
