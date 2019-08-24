@@ -8,11 +8,14 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
    
-  - PROJECT_REPO: github-shallow-clone
+  - PROJECT_REPO: nuget-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: github-shallow-clone
+  - PROJECT_REPO: nuget-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: nuget-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
 
     
 clone_script:
@@ -30,7 +33,116 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+  
+#test project: nuget-test VS 2017, deploy provider = nuget-appveyor
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nuget-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
+  
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
 
+  build:
+    publish_nuget: true
+    publish_nuget_symbols: true
+    include_nuget_references: true
+    verbosity: minimal
+  
+  deploy:
+  - provider: Environment
+    name: nuget-appveyor
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/  
+    
+#test project: nuget-test VS 2015, deploy provider = nuget-appveyor
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nuget-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+  
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+
+  build:
+    publish_nuget: true
+    publish_nuget_symbols: true
+    include_nuget_references: true
+    verbosity: minimal
+  
+  deploy:
+  - provider: Environment
+    name: nuget-appveyor
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/     
+#test project: nuget-test VS 2017, deploy provider = nuget-appveyor
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nuget-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
+  
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+
+  build:
+    publish_nuget: true
+    publish_nuget_symbols: true
+    include_nuget_references: true
+    verbosity: minimal
+  
+  deploy:
+  - provider: NuGet
+    api_key:
+      secure: VTcHA+VEHzYiaegH6vrsStbqDlWHcf17K/4cpE6JFZJq6pZqfbCd+HcfUpD3+88e
+  
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/  
+    
+#test project: nuget-test VS 2015, deploy provider = nuget-appveyor
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nuget-test
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+  
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+
+  build:
+    publish_nuget: true
+    publish_nuget_symbols: true
+    include_nuget_references: true
+    verbosity: minimal
+  
+  deploy:
+  - provider: NuGet
+    api_key:
+      secure: VTcHA+VEHzYiaegH6vrsStbqDlWHcf17K/4cpE6JFZJq6pZqfbCd+HcfUpD3+88e
+  
+  skip_commits:
+    message: /ubuntu-only|vs2017-only/     
+    
 #test project: sgithub-shallow-clone VS 2017
 -
   matrix:
