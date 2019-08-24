@@ -36,13 +36,11 @@ for:
 -
   matrix:
     only:
-      - PROJECT_REPO: ps-iswindows-islinux-vars
+      - PROJECT_REPO: psgallery-test
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
-        psg_api_key:
-          secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
-  #environment:
-    #psg_api_key:
-      #secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
+  environment:
+    psg_api_key:
+      secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/   
@@ -51,7 +49,7 @@ for:
 -
   matrix:
     only:
-      - PROJECT_REPO: ps-iswindows-islinux-vars
+      - PROJECT_REPO: psgallery-test
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015        
   environment:
     psg_api_key:
