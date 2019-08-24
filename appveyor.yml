@@ -7,7 +7,6 @@ environment:
 #    -PROJECT_NAME (only if differenet from PROJECT_REPO name )
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
- deploy:
   
   - PROJECT_REPO: nuget-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
