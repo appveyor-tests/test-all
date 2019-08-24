@@ -14,9 +14,6 @@ environment:
   - PROJECT_REPO: psgallery-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
-  - PROJECT_REPO: unit-test-runners-except
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
     
 clone_script:
 - cmd: git clone https://github.com/appveyor-tests/%PROJECT_REPO% %APPVEYOR_BUILD_FOLDER%
@@ -40,10 +37,12 @@ for:
   matrix:
     only:
       - PROJECT_REPO: ps-iswindows-islinux-vars
-        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017        
-  environment:
-    psg_api_key:
-      secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
+        psg_api_key:
+          secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
+  #environment:
+    #psg_api_key:
+      #secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
   
   skip_commits:
     message: /ubuntu-only|vs2015-only/   
