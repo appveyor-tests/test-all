@@ -8,10 +8,10 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
    
-  - PROJECT_REPO: secure-file-test
+  - PROJECT_REPO: github-shallow-clone
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
-  - PROJECT_REPO: secure-file-test
+  - PROJECT_REPO: github-shallow-clone
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
     
@@ -31,6 +31,26 @@ for:
 ################################################################
 
 
+#test project: sgithub-shallow-clone VS 2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: github-shallow-clone
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
+  shallow_clone: true
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/  
+    
+#test project: github-shallow-clone VS 2017
+-
+  matrix:
+    only:
+      - PROJECT_REPO: github-shallow-clone
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
+  shallow_clone: true
+  skip_commits:
+    message: /ubuntu-only|vs2015-only/  
+    
 
 #test project: secure-file-test VS 2017
 -
