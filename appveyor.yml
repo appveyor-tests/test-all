@@ -8,6 +8,12 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
+  - PROJECT_REPO: psgallery-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017    
+    
+  - PROJECT_REPO: psgallery-test
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+
   - PROJECT_REPO: upload-xml-test-results
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   
