@@ -42,34 +42,6 @@ environment:
   - PROJECT_REPO: powershell-core
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
     
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.3
-
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.4
-    
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.5
-    
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 9.6
-  
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    PGSQL_VERSION: 10
-
-  - PROJECT_REPO: sql-server-instances
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    SQL_INSTANCE_NAME: SQL2008R2SP2
-    
-  - PROJECT_REPO: sql-server-instances
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    SQL_INSTANCE_NAME: SQL2012SP1
-
   - PROJECT_REPO: vdproj-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
@@ -226,12 +198,6 @@ environment:
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     PGSQL_VERSION: 10
 
-  - PROJECT_REPO: ps-iswindows-islinux-vars
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    
-  - PROJECT_REPO: ps-iswindows-islinux-vars
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 20
-
   - PROJECT_REPO: rust-ssl-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     RUSTUP_USE_HYPER: 1
@@ -278,12 +244,6 @@ environment:
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
   - PROJECT_REPO: powershell-start-job-slow-regression
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-
-  - PROJECT_REPO: powershell-core
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: powershell-core
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
   - PROJECT_REPO: postgresql
