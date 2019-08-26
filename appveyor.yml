@@ -6,8 +6,11 @@ environment:
 #    -PROJECT_REPO
 #    -PROJECT_NAME (only if differenet from PROJECT_REPO name )
 #    -APPVEYOR_BUILD_WORKER_IMAGE
-###########################  
+########################### 
 
+  - PROJECT_REPO: clone-folder-forward-slash
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
   - PROJECT_REPO: CORSTest
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
@@ -465,6 +468,24 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: clone-folder-forward-slash VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: clone-folder-forward-slash
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+  clone_folder: c:\test\%APPVEYOR_REPO_NAME%
+  build: off
+  test: off
+  artifacts:
+  - path: '*.yml'
+    name: yaml
+  deploy_script:
+  - ps: if($artifacts.Count -eq 0) {throw "no artifacts packaged"}
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only|vs2013-only/  
+    
 #test project: CORSTest VS 2015
 -
   matrix:
