@@ -8,6 +8,9 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
+  - PROJECT_REPO: nunit3-tests
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015    
+    
   - PROJECT_REPO: psgallery-test
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017    
     
@@ -450,6 +453,27 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: nunit3-tests VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: nunit3-tests
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+
+  build:
+    verbosity: minimal
+
+  before_build:
+  - nuget restore
+
+  test:
+    categories:
+      except:
+      - A
+      - B
+    
+  skip_commits:
+    message: /ubuntu-only|vs2015-only|vs2013-only/  
   
 #test project: nuget-test VS 2017, deploy provider = nuget-appveyor
 -
