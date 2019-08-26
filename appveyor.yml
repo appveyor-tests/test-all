@@ -8,6 +8,8 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
+  - PROJECT_REPO: CORSTest
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
   - PROJECT_REPO: dacpac-local-2008r2sp2
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -463,6 +465,25 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: CORSTest VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: CORSTest
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+  install:
+    - nuget restore
+  
+  environment:
+    API_URL: https://ci.appveyor.com
+    API_TOKEN:
+      secure: CYNUgs2NaVj+RyCPl2W36Iw8ul6blGYsiwK3X5At2oI=
+  build:
+    verbosity: minimal
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only|vs2013-only/  
+    
 #test project: dacpac-local-2008r2sp2 VS 2015
 -
   matrix:
