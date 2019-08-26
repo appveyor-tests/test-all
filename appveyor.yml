@@ -249,12 +249,6 @@ environment:
   - PROJECT_REPO: powershell-start-job-slow-regression
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: postgresql
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-
   - PROJECT_REPO: package-web-app-with-web-jobs
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
