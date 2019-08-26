@@ -1559,7 +1559,7 @@ for:
   skip_commits:
     message: /ubuntu-only|vs2017-only|vs2013-only/
     
- -
+-
   matrix:
     only:
       - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
