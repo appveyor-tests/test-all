@@ -8,6 +8,10 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ###########################  
 
+
+  - PROJECT_REPO: dacpac-local-2008r2sp2
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
   - PROJECT_REPO: dacpac-local-2012sp1
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
@@ -459,6 +463,26 @@ for:
 # project-specific settings not scripted in project's build.ps1
 ################################################################
 
+#test project: dacpac-local-2008r2sp2 VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: dacpac-local-2008r2sp2
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+  services: mssql2008r2sp2
+  build: off
+  
+  artifacts:
+  - path: db\test_db.dacpac
+    name: Mydacpac
+    
+  deploy:
+  - provider: Local
+    Mydacpac.deploy_database: true
+    Mydacpac.connection_string: Server=(local)\SQL2008R2SP2;Database=my_app;Integrated security=SSPI;
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only|vs2013-only/  
 
 #test project: dacpac-local-2012sp1 VS 2015
 -
