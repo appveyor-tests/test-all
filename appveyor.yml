@@ -382,6 +382,12 @@ environment:
     
   - PROJECT_REPO: appveyor-py-launcher
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    
+  - PROJECT_REPO: appveyor-py-launcher
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
+  - PROJECT_REPO: appveyor-py-launcher
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
 
   - PROJECT_REPO: dotnetcore-nuget-pack
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
@@ -468,7 +474,7 @@ for:
     name: nuget-appveyor
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/  
+    message: /ubuntu-only|vs2015-only|vs2013-only/  
     
 #test project: nuget-test VS 2015, deploy provider = nuget-appveyor
 -
@@ -496,7 +502,7 @@ for:
     name: nuget-appveyor
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/     
+    message: /ubuntu-only|vs2017-only|vs2013-only/     
     
 #test project: nuget-test VS 2017, deploy provider = nuget-appveyor
 -
@@ -525,7 +531,7 @@ for:
       secure: VTcHA+VEHzYiaegH6vrsStbqDlWHcf17K/4cpE6JFZJq6pZqfbCd+HcfUpD3+88e
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/  
+    message: /ubuntu-only|vs2015-only|vs2013-only/  
     
 #test project: nuget-test VS 2015, deploy provider = nuget-appveyor
 -
@@ -554,7 +560,7 @@ for:
       secure: VTcHA+VEHzYiaegH6vrsStbqDlWHcf17K/4cpE6JFZJq6pZqfbCd+HcfUpD3+88e
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/     
+    message: /ubuntu-only|vs2017-only|vs2013-only/     
     
 #test project: sgithub-shallow-clone VS 2017
 -
@@ -564,7 +570,7 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
   shallow_clone: true
   skip_commits:
-    message: /ubuntu-only|vs2015-only/  
+    message: /ubuntu-only|vs2015-only|vs2013-only/  
     
 #test project: github-shallow-clone VS 2017
 -
@@ -574,7 +580,7 @@ for:
         APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017     
   shallow_clone: true
   skip_commits:
-    message: /ubuntu-only|vs2015-only/  
+    message: /ubuntu-only|vs2015-only|vs2013-only/  
     
 
 #test project: secure-file-test VS 2017
@@ -588,7 +594,7 @@ for:
       secure: Q3rkG9Khjq7DVfHJMdDzTw==    
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/  
+    message: /ubuntu-only|vs2015-only|vs2013-only/  
     
 #test project: secure-file-test VS 2015
 -
@@ -601,7 +607,7 @@ for:
       secure: Q3rkG9Khjq7DVfHJMdDzTw==    
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/  
+    message: /ubuntu-only|vs2017-only|vs2013-only/  
     
 #test project: psgallery-test VS 2017
 -
@@ -614,7 +620,7 @@ for:
       secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/   
+    message: /ubuntu-only|vs2015-only|vs2013-only/   
 
 #test project: psgallery-test VS 2015
 -
@@ -627,7 +633,7 @@ for:
       secure: yG4Zx5pchfapCdOfL5iCh9WvcDpGTyhdlPZbjDCwy55apwGNSmg3zDSq0JZBEA8w
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/   
+    message: /ubuntu-only|vs2017-only|vs2013-only/   
         
 #test project: ps-iswindows-islinux-vars VS 2017
 -
@@ -639,7 +645,7 @@ for:
     - ps: .\test.ps1
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/   
+    message: /ubuntu-only|vs2015-only|vs2013-only/   
 
 #test project: ps-iswindows-islinux-vars VS 2015
 -
@@ -651,7 +657,7 @@ for:
     - ps: .\test.ps1
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/   
+    message: /ubuntu-only|vs2017-only|vs2013-only/   
         
 #test project: powershell-core VS2017
 -
@@ -665,7 +671,7 @@ for:
       if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
   build: off
   skip_commits:
-    message: /ubuntu-only|vs2015-only/   
+    message: /ubuntu-only|vs2015-only|vs2013-only/   
 
 #test project: powershell-core VS2015
 -
@@ -679,7 +685,7 @@ for:
       if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
   build: off
   skip_commits:
-    message: /ubuntu-only|vs2017-only/   
+    message: /ubuntu-only|vs2017-only|vs2013-only/   
     
 #test project: wix3x-pre311-test VS2017
 -
@@ -699,7 +705,7 @@ for:
       name: MyApp
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/    
+    message: /ubuntu-only|vs2015-only|vs2013-only/    
 
 #test project: wix3x-pre311-test VS2015
 -
@@ -719,7 +725,7 @@ for:
       name: MyApp
     
   skip_commits:
-    message: /ubuntu-only|vs2017-only/  
+    message: /ubuntu-only|vs2017-only|vs2013-only/  
     
 #test project: ssdt-dacpac VS2017
 -
@@ -746,7 +752,7 @@ for:
     - ps: .\test_script.ps1
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #test project: ssdt-dacpac VS2015
 -
@@ -773,7 +779,7 @@ for:
     - ps: .\test_script.ps1
     
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
 
 #test project: web-app-packaging-for-xcopy VS2017
 -
@@ -790,7 +796,7 @@ for:
   test: off
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #test project: web-app-packaging-for-xcopy VS2015
 -
@@ -807,7 +813,7 @@ for:
   test: off
     
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
     
 #test project: selenium-tests VS2015
@@ -834,7 +840,7 @@ for:
     - ps: Get-ChildItem .\*.png -Recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
     
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
 #test project: selenium-tests VS2017
 -
@@ -860,7 +866,7 @@ for:
     - ps: Get-ChildItem .\*.png -Recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
     
 #test project: package-web-app-with-web-jobs VS2017
@@ -878,7 +884,7 @@ for:
     verbosity: minimal
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: package-web-app-with-web-jobs VS2015
 -
@@ -895,7 +901,7 @@ for:
     verbosity: minimal
     
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
 #test project: nuget-restore for VS2017
 -
@@ -915,7 +921,7 @@ for:
     verbosity: normal
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: nuget-restore for VS2015
 -
@@ -935,7 +941,7 @@ for:
     verbosity: normal
     
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
  #test project: nodejs-versions for VS2015
 -
@@ -957,7 +963,7 @@ for:
   - path: '**\*.txt'
    
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
 
 #test project: nodejs-versions for VS2017
 -
@@ -979,7 +985,7 @@ for:
   - path: '**\*.txt'
    
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: jspm-config-auth for VS2017
 -
@@ -996,7 +1002,7 @@ for:
   
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 
 #test project: jspm-config-auth for VS2015
@@ -1013,7 +1019,7 @@ for:
   - ps: .\install.ps1
    
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
 #test project: dacpac-sqlpackage-test for VS2017
 -
@@ -1031,7 +1037,7 @@ for:
   - ps: .\after_build.ps1   
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: dacpac-sqlpackage-test for VS2015
 -
@@ -1049,7 +1055,7 @@ for:
   - ps: .\after_build.ps1   
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #test project: clone-folder-with-spaces for VS 2017
 -
@@ -1064,7 +1070,7 @@ for:
   - ps: ls
 
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: clone-folder-with-spaces for VS 2015
 -
@@ -1079,7 +1085,7 @@ for:
   - ps: ls
 
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
 #test project: cache for VS 2017
 -
@@ -1096,7 +1102,7 @@ for:
   - c:\test-folder\
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #test project: cache for VS 2015
 -
@@ -1113,7 +1119,7 @@ for:
   - c:\test-folder\
     
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
 #test project: unit-test-runners
 -
@@ -1133,7 +1139,7 @@ for:
     verbosity: minimal
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 
 #test project: unit-test-runners-except
@@ -1166,7 +1172,7 @@ for:
   - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/    
+    message: /ubuntu-only|vs2015-only|vs2013-only/    
     
 #test project: unit-test-runners-only-old-style
 -
@@ -1194,7 +1200,7 @@ for:
   - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #test project: unit-test-runners-only-new-style
 -
@@ -1223,7 +1229,7 @@ for:
   - ps: .\checkTestsNumber.ps1 -baseUrl "https://ci.appveyor.com" -testsExpected 2
     
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #test project: semver2-nuget-restore
 -
@@ -1238,7 +1244,7 @@ for:
     verbosity: minimal
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #test project: SetupProject2017 # Appveyor test project name: wix-in-vs2017
 -
@@ -1252,7 +1258,7 @@ for:
   test: off
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: dotnetcore-nuget-pack for VS-2017
 -
@@ -1290,7 +1296,7 @@ for:
   - ps: .\deploy.ps1
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 
 #test project: WDK-10.0.14393.0
@@ -1303,7 +1309,7 @@ for:
   - ps: .\install.ps1
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
 
 #test project: artifacts
 
@@ -1322,7 +1328,7 @@ for:
   - ps: Get-EventLog AppVeyor -newest 10 | Format-List
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 #Visual Studio 2015
 -
@@ -1339,7 +1345,7 @@ for:
   - ps: Get-EventLog AppVeyor -newest 10 | Format-List
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
 #test project: android-app-test VS 2015
 -
@@ -1353,7 +1359,7 @@ for:
   test: off
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
 #test project: android-app-test VS 2017
 -
@@ -1367,7 +1373,7 @@ for:
   test: off
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: AzureCloudServiceVS2017
 -
@@ -1384,7 +1390,7 @@ for:
   test: off
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
 #test project: azure-cloud-services VS2017 with cashing packages
 -
@@ -1404,7 +1410,7 @@ for:
     publish_azure: true
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
  #test project: azure-cloud-services VS2015 with cashing packages
 -
@@ -1424,7 +1430,7 @@ for:
     publish_azure: true
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
  
  #test project azure-unc-smb-share VS2017
 -
@@ -1437,7 +1443,7 @@ for:
       secure: if71+kDyW4wl7Xbfgzi5G0Faau1OcfdfT/KU9LK+9Cmjv/DINmssTw/bfsqvDfie4RiDUsy/zMCOiSxQZ9IkiHVgx9lrkfZ1/ysDn50qwvklCKJhTjhS+UQQ8cJPrZ9q
   
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
  #test project azure-unc-smb-share VS2015
 -
@@ -1450,7 +1456,7 @@ for:
       secure: if71+kDyW4wl7Xbfgzi5G0Faau1OcfdfT/KU9LK+9Cmjv/DINmssTw/bfsqvDfie4RiDUsy/zMCOiSxQZ9IkiHVgx9lrkfZ1/ysDn50qwvklCKJhTjhS+UQQ8cJPrZ9q
   
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
  #test project: dacpac-local-2014 for VS 2015
 -
@@ -1469,7 +1475,7 @@ for:
     Mydacpac.connection_string: Server=(local)\SQL2014;Database=my_app;Integrated security=SSPI;
 
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
     
  #test project: dacpac-local-2014 for VS 2017
 -
@@ -1488,7 +1494,7 @@ for:
     Mydacpac.connection_string: Server=(local)\SQL2014;Database=my_app;Integrated security=SSPI;
 
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
 
  #test project: dacpac-local-2016 for VS 2015
 -
@@ -1507,7 +1513,7 @@ for:
     Mydacpac.connection_string: Server=(local)\SQL2016;Database=my_app;Integrated security=SSPI;
 
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
 
  #test project: dacpac-local-2016 for VS 2017
 -
@@ -1526,7 +1532,7 @@ for:
     Mydacpac.connection_string: Server=(local)\SQL2016;Database=my_app;Integrated security=SSPI;
 
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
     
 ##########################################################################
@@ -1537,20 +1543,27 @@ for:
     only:
       - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
   skip_commits:
-    message: /vs2017-only|vs2015-only/
+    message: /vs2017-only|vs2015-only|vs2013-only/
 
 -
   matrix:
     only:
       - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
   skip_commits:
-    message: /ubuntu-only|vs2015-only/
+    message: /ubuntu-only|vs2015-only|vs2013-only/
     
 -
   matrix:
     only:
       - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
   skip_commits:
-    message: /ubuntu-only|vs2017-only/
+    message: /ubuntu-only|vs2017-only|vs2013-only/
+    
+ -
+  matrix:
+    only:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
+  skip_commits:
+    message: /ubuntu-only|vs2017-only|vs2015-only/
     
 
