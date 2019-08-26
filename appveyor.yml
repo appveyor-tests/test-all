@@ -8,6 +8,9 @@ environment:
 #    -APPVEYOR_BUILD_WORKER_IMAGE
 ########################### 
 
+  - PROJECT_REPO: clone-folder-variables
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    
   - PROJECT_REPO: clone-folder-forward-slash
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     
@@ -467,6 +470,28 @@ for:
 ################################################################
 # project-specific settings not scripted in project's build.ps1
 ################################################################
+
+
+#test project: clone-folder-variables VS 2015
+-
+  matrix:
+    only:
+      - PROJECT_REPO: clone-folder-variables 
+        APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015     
+  environment:
+    HOME: $(HOMEDRIVE)$(HOMEPATH)
+    GOPATH: $(HOME)\go
+    MY_PATH: $(GOPATH)\bin;C:\Python27\Scripts;$(HOME)\rebar
+    MY_BUILD_DIR: $(appveyor_build_folder)\build
+    MY_DIST_DIR: '%appveyor_build_folder%\${DIST_NAME}'
+    ORIG_BUILD_FOLDER: ${appveyor_build_folder}
+    DIST_NAME: dist-aaabbb
+    PATH: 'C:\Ruby200\bin;%PATH%'
+    
+  clone_folder: $(GOPATH)\src\site\org\project
+    
+  skip_commits:
+    message: /ubuntu-only|vs2017-only|vs2013-only/  
 
 #test project: clone-folder-forward-slash VS 2015
 -
