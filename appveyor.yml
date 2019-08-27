@@ -108,12 +108,6 @@ environment:
   - PROJECT_REPO: web-app-packaging-for-xcopy
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
 
-  - PROJECT_REPO: vdproj-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    
-  - PROJECT_REPO: vdproj-test
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-
   - PROJECT_REPO: unc-test-python
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     
